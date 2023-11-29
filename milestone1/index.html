@@ -41,8 +41,8 @@
         class="container position-absolute top-0 mt-4 start-0 end-0 bg-white"
       >
         <div class="row">
-          <div class="col-5 gp-sfondo-grey">
-            <header class="d-flex justify-content-between">
+          <div class="col-5 px-0">
+            <header class="d-flex justify-content-between gp-sfondo-grey px-3">
               <!-- immagine piu nome utente -->
               <div class="d-flex justify-content-between py-2">
                 <div class="d-flex">
@@ -76,11 +76,11 @@
             </header>
             <main>
               <div
-                class="d-flex gp-sfondo-azzurro justify-content-between align-items-center py-3"
+                class="d-flex gp-sfondo-azzurro justify-content-between align-items-center py-3 px-3"
               >
                 <div>
                   <i
-                    class="fa-solid fa-bell-slash bg-white fs-1 rounded-circle ms-3"
+                    class="fa-solid fa-bell-slash fs-1 rounded-circle ms-3 bg-white"
                     style="color: #8edafc"
                   ></i>
                 </div>
@@ -94,8 +94,27 @@
                 </div>
               </div>
               <div>
+                <div class="input-group flex-nowrap py-3 px-2 gp-sfondo-grey">
+                  <span class="input-group-text" id="addon-wrapping"
+                    ><i
+                      class="fa-solid fa-magnifying-glass fs-4"
+                      style="color: #b1b1b1"
+                    ></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Cerca o inizia una nuova chat"
+                    aria-label="Cerca o inizia una nuova chat"
+                    aria-describedby="addon-wrapping"
+                  />
+                </div>
+              </div>
+              <div>
                 <ul>
-                  <li></li>
+                  <li v-for="(contact, index) in contacts"></li>
+                  <img src="" alt="" />
+                  <h2></h2>
                 </ul>
               </div>
             </main>
