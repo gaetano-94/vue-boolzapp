@@ -10,8 +10,20 @@ body {
 .sfondo-green {
   background-color: #009788;
   height: 120px;
+  position: relative;
 }
 
 /*
 UTILITY
 */
+.gp-sfondo-grey {
+  background-color: #eaeaea;
+}
+
+.gp-sfondo-azzurro {
+  background-color: #8edafc;
+}
+
+.gp-w-20 {
+  width: 20%;
+}

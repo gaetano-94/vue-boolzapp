@@ -35,21 +35,80 @@
   </head>
   <body>
     <header class="sfondo-green"></header>
+    <!-- collegamento a vue js tramite app -->
     <div id="app">
-      <div class="container m-auto">
+      <div
+        class="container position-absolute top-0 mt-4 start-0 end-0 bg-white"
+      >
         <div class="row">
-          <div class="col-5">
-            <header>1</header>
-            <main>2</main>
+          <div class="col-5 gp-sfondo-grey">
+            <header class="d-flex justify-content-between">
+              <!-- immagine piu nome utente -->
+              <div class="d-flex justify-content-between py-2">
+                <div class="d-flex">
+                  <img
+                    src="img/avatar_io.jpg"
+                    alt="la mia foto"
+                    class="gp-w-20 rounded-circle"
+                  />
+                  <h2 class="mt-4 ms-3 fs-4">Nuovo Utente</h2>
+                </div>
+                <!-- /immagine piu nome utente -->
+                <!-- icone header -->
+                <div
+                  class="d-flex justify-content-center align-items-center gap-3"
+                >
+                  <i
+                    class="fa-solid fa-circle-notch fs-3"
+                    style="color: #b1b1b1"
+                  ></i>
+                  <i
+                    class="fa-solid fa-message fs-3"
+                    style="color: #b1b1b1"
+                  ></i>
+                  <i
+                    class="fa-solid fa-ellipsis-vertical fs-3"
+                    style="color: #b1b1b1"
+                  ></i>
+                </div>
+                <!-- /icone header -->
+              </div>
+            </header>
+            <main>
+              <div
+                class="d-flex gp-sfondo-azzurro justify-content-between align-items-center py-3"
+              >
+                <div>
+                  <i
+                    class="fa-solid fa-bell-slash bg-white fs-1 rounded-circle ms-3"
+                    style="color: #8edafc"
+                  ></i>
+                </div>
+                <div class="me-5">
+                  <div class="fs-5 me-4">
+                    Ricevi notifiche di nuovi messaggi
+                  </div>
+                  <div>
+                    <a href="#" class="fs-5">Attiva notifiche desktop</a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <ul>
+                  <li></li>
+                </ul>
+              </div>
+            </main>
           </div>
           <div class="col-7">
-            <header>1</header>
-            <main>2</main>
-            <footer>3</footer>
+            <header>header</header>
+            <main>main</main>
+            <footer>footer</footer>
           </div>
         </div>
       </div>
     </div>
+    <!-- /collegamento a vue js tramite app -->
     <!-- VUE JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- /VUE JS -->
