@@ -27,3 +27,19 @@ UTILITY
 .gp-w-20 {
   width: 20%;
 }
+
+.gp-w-10 {
+  width: 10%;
+}
+
+.gp-altezza-header {
+  height: 87px;
+}
+
+.gp-h4-color {
+  color: gray;
+}
+
+.gp-sfondo-footer {
+  background-color: #f5eee8;
+}
