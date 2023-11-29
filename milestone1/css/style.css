@@ -1,6 +1,16 @@
 /*
 COMMON
 */
+body {
+  height: 100vh;
+  background-color: #dadbd5;
+  font-family: 'Lato', sans-serif;
+}
+
+.sfondo-green {
+  background-color: #009788;
+  height: 120px;
+}
 
 /*
 UTILITY
