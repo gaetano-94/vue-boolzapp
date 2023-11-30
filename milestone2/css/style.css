@@ -54,3 +54,7 @@ UTILITY
   background-color: #f5eee8;
   height: 70px;
 }
+
+.gp-input-footer {
+  width: 500px;
+}
