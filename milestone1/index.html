@@ -52,7 +52,7 @@
                     alt="la mia foto"
                     class="gp-w-20 rounded-circle"
                   />
-                  <h2 class="mt-4 ms-3 fs-5">Nuovo Utente</h2>
+                  <h2 class="mt-4 ms-3 fs-5"><strong>Nuovo Utente</strong></h2>
                 </div>
                 <!-- /immagine piu nome utente -->
                 <!-- icone header -->
@@ -80,9 +80,9 @@
               <div
                 class="d-flex gp-sfondo-azzurro justify-content-between align-items-center py-3 px-3"
               >
-                <div>
+                <div class="bg-white fs-1 rounded-circle">
                   <i
-                    class="fa-solid fa-bell-slash fs-1 rounded-circle ms-3 bg-white"
+                    class="fa-solid fa-bell-slash rounded-circle pb-3 px-3 fs-3"
                     style="color: #8edafc"
                   ></i>
                 </div>
@@ -98,8 +98,8 @@
               <!-- /icona piu ricevi notifiche -->
               <!-- cerca o inizia una nuova chat -->
               <div>
-                <div class="input-group flex-nowrap py-3 px-2 gp-sfondo-grey">
-                  <span class="input-group-text" id="addon-wrapping"
+                <div class="input-group flex-nowrap py-2 px-2 gp-sfondo-grey">
+                  <span class="input-group-text bg-white" id="addon-wrapping"
                     ><i
                       class="fa-solid fa-magnifying-glass fs-4"
                       style="color: #b1b1b1"
@@ -118,9 +118,17 @@
               <!-- lista contatti -->
               <div>
                 <ul>
-                  <li v-for="(contact, i) in contacts"></li>
-                  <img src="" alt="" class="gp-w-20" />
-                  <h2></h2>
+                  <li
+                    v-for="(contact, i) in contacts"
+                    class="d-flex gap-4 py-1 border-bottom pe-5 me-4"
+                  >
+                    <img
+                      :src="contact.avatar"
+                      :alt="contact.avatar"
+                      class="gp-w-20 rounded-circle"
+                    />
+                    <h2 class="fs-5"><strong>{{ contact.name }}</strong></h2>
+                  </li>
                 </ul>
               </div>
               <!-- /lista contatti -->
@@ -128,24 +136,40 @@
           </div>
           <!-- /colonna di sinistra -->
           <!-- colonna di destra -->
-          <div class="col-7 px-0">
-            <header class="gp-sfondo-grey">
-              <div class="d-flex">
-                <img
-                  src="img/avatar_1.jpg"
-                  alt="la mia foto"
-                  class="gp-w-10 rounded-circle py-2"
-                />
-                <div>
-                  <h2 class="mt-3 ms-3 fs-5">Michele</h2>
-                  <h4 class="ms-3 fs-6 gp-h4-color">
+          <div class="col-7 px-0 d-flex flex-column">
+            <header class="gp-sfondo-grey py-1">
+              <div class="d-flex pb-1 justify-content-between">
+                <div class="d-flex">
+                  <img
+                    src="img/avatar_1.jpg"
+                    alt="la mia foto"
+                    class="gp-img rounded-circle mt-1"
+                  />
+                  <h2 class="mt-3 ms-3 fs-5"><strong>Michele</strong></h2>
+                  <!-- <h4 class="ms-3 fs-6 gp-h4-color">
                     Ultimo accesso oggi alle
-                  </h4>
+                  </h4> -->
+                </div>
+                <div
+                  class="d-flex gap-3 align-items-center justify-content-end pe-3"
+                >
+                  <i
+                    class="fa-solid fa-magnifying-glass fs-3"
+                    style="color: #b1b1b1"
+                  ></i>
+                  <i
+                    class="fa-solid fa-paperclip fs-3"
+                    style="color: #b1b1b1"
+                  ></i>
+                  <i
+                    class="fa-solid fa-ellipsis-vertical fs-3"
+                    style="color: #b1b1b1"
+                  ></i>
                 </div>
               </div>
             </header>
-            <main class="">main</main>
-            <footer class="gp-sfondo-footer">footer</footer>
+            <main class="gp-sfondo-main flex-grow-1">main</main>
+            <footer class="gp-sfondo-footer mt-4">footer</footer>
           </div>
           <!-- /colonna di destra -->
         </div>
