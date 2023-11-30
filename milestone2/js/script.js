@@ -168,6 +168,12 @@ createApp({
           ],
         },
       ],
+      contactActive: 0,
     };
+  },
+  methods: {
+    setActiveContact(index) {
+      this.contactActive = index;
+    },
   },
 }).mount('#app');
