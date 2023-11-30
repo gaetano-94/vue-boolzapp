@@ -48,6 +48,7 @@ UTILITY
 .gp-sfondo-main {
   background-image: url(../img/mine.jpg);
   height: 80%;
+  border-right: 15px solid white;
 }
 
 .gp-sfondo-footer {
