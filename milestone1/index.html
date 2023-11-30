@@ -41,6 +41,7 @@
         class="container position-absolute top-0 mt-4 start-0 end-0 bg-white"
       >
         <div class="row">
+          <!-- colonna di sinistra -->
           <div class="col-5 px-0">
             <header class="d-flex justify-content-between gp-sfondo-grey px-3">
               <!-- immagine piu nome utente -->
@@ -75,6 +76,7 @@
               </div>
             </header>
             <main>
+              <!-- icona piu ricevi notifiche -->
               <div
                 class="d-flex gp-sfondo-azzurro justify-content-between align-items-center py-3 px-3"
               >
@@ -93,6 +95,8 @@
                   </div>
                 </div>
               </div>
+              <!-- /icona piu ricevi notifiche -->
+              <!-- cerca o inizia una nuova chat -->
               <div>
                 <div class="input-group flex-nowrap py-3 px-2 gp-sfondo-grey">
                   <span class="input-group-text" id="addon-wrapping"
@@ -110,15 +114,20 @@
                   />
                 </div>
               </div>
+              <!-- /cerca o inizia una nuova chat -->
+              <!-- lista contatti -->
               <div>
                 <ul>
-                  <li v-for="(contact, index) in contacts"></li>
+                  <li v-for="(contact, i) in contacts"></li>
                   <img src="" alt="" class="gp-w-20" />
                   <h2></h2>
                 </ul>
               </div>
+              <!-- /lista contatti -->
             </main>
           </div>
+          <!-- /colonna di sinistra -->
+          <!-- colonna di destra -->
           <div class="col-7 px-0">
             <header class="gp-sfondo-grey">
               <div class="d-flex">
@@ -135,9 +144,10 @@
                 </div>
               </div>
             </header>
-            <main>main</main>
+            <main class="">main</main>
             <footer class="gp-sfondo-footer">footer</footer>
           </div>
+          <!-- /colonna di destra -->
         </div>
       </div>
     </div>
