@@ -59,3 +59,11 @@ UTILITY
 .gp-input-footer {
   width: 500px;
 }
+
+.text-green {
+  background-color: #d5f9ba;
+}
+
+.text-white {
+  background-color: #ffffff;
+}
