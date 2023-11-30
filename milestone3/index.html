@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolzapp</title>
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- /BOOTSTRAP -->
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- /FONT AWESOME -->
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <!-- /GOOGLE FONTS -->
+    <!-- MY CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- /MY CSS -->
+  </head>
+  <body>
+    <header class="sfondo-green"></header>
+    <!-- collegamento a vue js tramite app -->
+    <div id="app">
+      <div
+        class="container position-absolute top-0 mt-4 start-0 end-0 bg-white"
+      >
+        <div class="row">
+          <!-- colonna di sinistra -->
+          <div class="col-5 px-0">
+            <header class="d-flex justify-content-between gp-sfondo-grey px-3">
+              <!-- immagine piu nome utente -->
+              <div class="d-flex justify-content-between py-2">
+                <div class="d-flex">
+                  <img
+                    src="img/avatar_io.jpg"
+                    alt="la mia foto"
+                    class="gp-w-20 rounded-circle"
+                  />
+                  <h2 class="mt-4 ms-3 fs-5"><strong>Nuovo Utente</strong></h2>
+                </div>
+                <!-- /immagine piu nome utente -->
+                <!-- icone header -->
+                <div
+                  class="d-flex justify-content-center align-items-center gap-3"
+                >
+                  <i
+                    class="fa-solid fa-circle-notch fs-3"
+                    style="color: #b1b1b1"
+                  ></i>
+                  <i
+                    class="fa-solid fa-message fs-3"
+                    style="color: #b1b1b1"
+                  ></i>
+                  <i
+                    class="fa-solid fa-ellipsis-vertical fs-3"
+                    style="color: #b1b1b1"
+                  ></i>
+                </div>
+                <!-- /icone header -->
+              </div>
+            </header>
+            <main>
+              <!-- icona piu ricevi notifiche -->
+              <div
+                class="d-flex gp-sfondo-azzurro justify-content-between align-items-center py-3 px-3"
+              >
+                <div class="bg-white fs-1 rounded-circle">
+                  <i
+                    class="fa-solid fa-bell-slash rounded-circle pb-3 px-3 fs-3"
+                    style="color: #8edafc"
+                  ></i>
+                </div>
+                <div class="me-5">
+                  <div class="fs-5 me-4">
+                    Ricevi notifiche di nuovi messaggi
+                  </div>
+                  <div>
+                    <a href="#" class="fs-5">Attiva notifiche desktop</a>
+                  </div>
+                </div>
+              </div>
+              <!-- /icona piu ricevi notifiche -->
+              <!-- cerca o inizia una nuova chat -->
+              <div>
+                <div class="input-group flex-nowrap py-2 px-2 gp-sfondo-grey">
+                  <span class="input-group-text bg-white" id="addon-wrapping"
+                    ><i
+                      class="fa-solid fa-magnifying-glass fs-4"
+                      style="color: #b1b1b1"
+                    ></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Cerca o inizia una nuova chat"
+                    aria-label="Cerca o inizia una nuova chat"
+                    aria-describedby="addon-wrapping"
+                  />
+                </div>
+              </div>
+              <!-- /cerca o inizia una nuova chat -->
+              <!-- lista contatti -->
+              <div>
+                <ul class="overflow-y-auto">
+                  <li
+                    v-for="(contact, i) in contacts"
+                    class="d-flex gap-4 py-1 border-bottom pe-5 me-4"
+                    @click="setActiveContact(i)"
+                  >
+                    <img
+                      :src="contact.avatar"
+                      :alt="contact.avatar"
+                      class="gp-w-20 rounded-circle"
+                    />
+                    <h2 class="fs-5"><strong>{{ contact.name }}</strong></h2>
+                  </li>
+                </ul>
+              </div>
+              <!-- /lista contatti -->
+            </main>
+          </div>
+          <!-- /colonna di sinistra -->
+          <!-- colonna di destra -->
+          <div class="col-7 px-0 d-flex flex-column">
+            <header class="gp-sfondo-grey py-1">
+              <div class="d-flex pb-1 justify-content-between">
+                <div class="d-flex">
+                  <img
+                    :src="contacts[contactActive].avatar"
+                    alt="la mia foto"
+                    class="gp-img rounded-circle mt-1"
+                  />
+                  <div class="mt-1 ps-3">
+                    <h2 class="fs-6">
+                      <strong>{{ contacts[contactActive].name }}</strong>
+                    </h2>
+                    <p class="gp-h4-color">Ultimo accesso oggi alle</p>
+                  </div>
+                </div>
+                <div
+                  class="d-flex gap-3 align-items-center justify-content-end pe-3"
+                >
+                  <i
+                    class="fa-solid fa-magnifying-glass fs-3"
+                    style="color: #b1b1b1"
+                  ></i>
+                  <i
+                    class="fa-solid fa-paperclip fs-3"
+                    style="color: #b1b1b1"
+                  ></i>
+                  <i
+                    class="fa-solid fa-ellipsis-vertical fs-3"
+                    style="color: #b1b1b1"
+                  ></i>
+                </div>
+              </div>
+            </header>
+            <main class="gp-sfondo-main flex-grow-1">
+              <div
+                v-for="message in contacts[contactActive].messages"
+                class="message"
+              >
+                {{message.message}}
+              </div>
+            </main>
+            <footer
+              class="gp-sfondo-footer my-3 d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <i
+                  class="fa-regular fa-face-smile fs-1 ps-4"
+                  style="color: #b1b1b1"
+                ></i>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  class="form-control fs-4 gp-input-footer"
+                  placeholder="Scrivi un messaggio"
+                  aria-label="Scrivi un messaggio"
+                  aria-describedby="addon-wrapping"
+                />
+              </div>
+              <div>
+                <i
+                  class="fa-solid fa-microphone fs-1 pe-4"
+                  style="color: #b1b1b1"
+                ></i>
+              </div>
+            </footer>
+          </div>
+          <!-- /colonna di destra -->
+        </div>
+      </div>
+    </div>
+    <!-- /collegamento a vue js tramite app -->
+    <!-- VUE JS -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- /VUE JS -->
+    <!-- MY JS -->
+    <script src="js/script.js"></script>
+    <!-- /MY JS -->
+  </body>
+</html>
