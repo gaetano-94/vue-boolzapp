@@ -42,7 +42,7 @@
       >
         <div class="row">
           <!-- colonna di sinistra -->
-          <div class="col-5 px-0">
+          <div class="col-5 px-0 gp-border-col">
             <header class="d-flex justify-content-between gp-sfondo-grey px-3">
               <!-- immagine piu nome utente -->
               <div class="d-flex justify-content-between py-2">
@@ -117,10 +117,10 @@
               <!-- /cerca o inizia una nuova chat -->
               <!-- lista contatti -->
               <div>
-                <ul class="overflow-y-auto">
+                <ul>
                   <li
                     v-for="(contact, i) in contacts"
-                    class="d-flex gap-4 py-1 border-bottom pe-5 me-4"
+                    class="d-flex gap-4 py-2 border-bottom pe-5 me-4"
                     @click="setActiveContact(i)"
                   >
                     <img
@@ -128,7 +128,10 @@
                       :alt="contact.avatar"
                       class="gp-w-20 rounded-circle"
                     />
-                    <h2 class="fs-5"><strong>{{ contact.name }}</strong></h2>
+                    <div class="mt-1">
+                      <h2 class="fs-5"><strong>{{ contact.name }}</strong></h2>
+                      <p class="gp-h4-color">Ultimo accesso oggi alle 12:00</p>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -138,21 +141,25 @@
           <!-- /colonna di sinistra -->
           <!-- colonna di destra -->
           <div class="col-7 px-0 d-flex flex-column">
+            <!-- HEADER -->
             <header class="gp-sfondo-grey py-1">
               <div class="d-flex pb-1 justify-content-between">
+                <!-- immagine piu testo -->
                 <div class="d-flex">
                   <img
                     :src="contacts[contactActive].avatar"
                     alt="la mia foto"
-                    class="gp-img rounded-circle mt-1"
+                    class="gp-img rounded-circle mt-1 ms-2"
                   />
                   <div class="mt-1 ps-3">
                     <h2 class="fs-6">
                       <strong>{{ contacts[contactActive].name }}</strong>
                     </h2>
-                    <p class="gp-h4-color">Ultimo accesso oggi alle</p>
+                    <p class="gp-h4-color">Ultimo accesso oggi alle 12:00</p>
                   </div>
                 </div>
+                <!-- /immagine piu testo -->
+                <!-- icone di destra -->
                 <div
                   class="d-flex gap-3 align-items-center justify-content-end pe-3"
                 >
@@ -169,17 +176,22 @@
                     style="color: #b1b1b1"
                   ></i>
                 </div>
+                <!-- /icone di destra -->
               </div>
             </header>
+            <!-- /HEADER -->
+            <!-- MAIN -->
             <main class="gp-sfondo-main flex-grow-1">
               <div
                 v-for="message in contacts[contactActive].messages"
-                class="message"
+                class="w-50"
                 :class="message.status === 'sent' ? 'text-user' : 'text-interlocutor' "
               >
                 {{message.message}}
               </div>
             </main>
+            <!-- /MAIN -->
+            <!-- FOOTER -->
             <footer
               class="gp-sfondo-footer my-3 d-flex justify-content-between align-items-center"
             >
@@ -205,6 +217,7 @@
                 ></i>
               </div>
             </footer>
+            <!-- /FOOTER -->
           </div>
           <!-- /colonna di destra -->
         </div>

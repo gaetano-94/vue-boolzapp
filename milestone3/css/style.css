@@ -16,6 +16,10 @@ body {
 /*
 UTILITY
 */
+.gp-border-col {
+  border-right: 1px solid #d6d6d6;
+}
+
 .gp-sfondo-grey {
   background-color: #eaeaea;
 }
