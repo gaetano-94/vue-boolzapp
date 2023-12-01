@@ -175,6 +175,7 @@
               <div
                 v-for="message in contacts[contactActive].messages"
                 class="message"
+                :class="message.status === 'sent' ? 'text-user' : 'text-interlocutor' "
               >
                 {{message.message}}
               </div>

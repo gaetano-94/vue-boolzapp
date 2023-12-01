@@ -60,10 +60,17 @@ UTILITY
   width: 500px;
 }
 
-.text-green {
+.text-user {
   background-color: #d5f9ba;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: end;
 }
 
-.text-white {
+.text-interlocutor {
   background-color: #ffffff;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
 }
